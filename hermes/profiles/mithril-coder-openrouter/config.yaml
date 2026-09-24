@@ -1,0 +1,22 @@
+# Host-local blocks (command_allowlist, onboarding, secrets, skills, terminal) are kept on the host and omitted here.
+model:
+  provider: openrouter-free
+  base_url: https://openrouter.ai/api/v1
+  default: z-ai/glm-5.3-flash
+  max_tokens: 4096
+  context_length: 131072
+providers:
+  openrouter-free:
+    base_url: https://openrouter.ai/api/v1
+    api_mode: chat_completions
+    key_env: OPENROUTER_API_KEY
+    stale_timeout_seconds: 120
+    request_timeout_seconds: 180
+    extra_headers:
+      HTTP-Referer: https://mithril.fund
+      X-OpenRouter-Title: Mithril governed coding
+security:
+  file_tools_workspace_only: true
+plugins:
+  enabled: []
+_config_version: 45
