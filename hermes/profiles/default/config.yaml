@@ -101,3 +101,8 @@ auxiliary:
 cron:
   bot_chat_delivery_timeout_seconds: 900
   max_parallel_jobs: 12
+
+# 1,008 profiles x ~8 fds held per ticked profile (state.db x3, -wal, -shm, agent.log,
+# errors.log) exceeded the 4096 default and crashed the gateway with EMFILE (2026-09-25).
+runtime:
+  nofile_soft_limit: 32768
