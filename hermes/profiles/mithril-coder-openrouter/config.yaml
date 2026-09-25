@@ -19,4 +19,4 @@ security:
   file_tools_workspace_only: true
 plugins:
   enabled: []
-_config_version: 45
+_config_version: 46
