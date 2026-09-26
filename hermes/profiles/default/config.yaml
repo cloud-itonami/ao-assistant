@@ -107,7 +107,7 @@ cron:
   # Owner, 2026-09-26: 14, one per Mishima head. At 8 the gateway kept all
   # slots busy with long agent jobs (mostly tool time, not LLM time: 1-4 of 14
   # heads busy) while ~20 jobs sat up to 26 min overdue. Read at gateway start.
-  max_global_parallel_jobs: 4
+  max_global_parallel_jobs: 14
 
 # 1,008 profiles x ~8 fds held per ticked profile (state.db x3, -wal, -shm, agent.log,
 # errors.log) exceeded the 4096 default and crashed the gateway with EMFILE (2026-09-25).
