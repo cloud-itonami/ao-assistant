@@ -1,5 +1,8 @@
 # Host-local blocks (command_allowlist, onboarding, secrets, skills, terminal) are kept on the host and omitted here.
 fallback_providers:
+  - provider: murakumo
+    model: murakumo-main
+    base_url: https://api.murakumo.cloud/v1
   - provider: kotoba
     model: qwen/qwen3.8-27b
     base_url: https://api.kotoba.cloud/v1
