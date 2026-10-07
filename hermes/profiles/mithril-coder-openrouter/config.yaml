@@ -19,4 +19,11 @@ security:
   file_tools_workspace_only: true
 plugins:
   enabled: []
-_config_version: 45
+_config_version: 46
+mcp_servers:
+  github-forest:
+    command: /opt/homebrew/bin/node
+    args:
+      - ~/github/com-junkawasaki/west-manifest/scripts/forest-maintenance.mjs
+      - mcp
+    lazy: true
