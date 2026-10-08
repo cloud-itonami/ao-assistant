@@ -20,3 +20,10 @@ security:
 plugins:
   enabled: []
 _config_version: 46
+mcp_servers:
+  github-forest:
+    command: /opt/homebrew/bin/node
+    args:
+      - ~/github/com-junkawasaki/west-manifest/scripts/forest-maintenance.mjs
+      - mcp
+    lazy: true
