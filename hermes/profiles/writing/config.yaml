@@ -19,13 +19,13 @@ auxiliary:
   web_extract:
     base_url: https://api.murakumo.cloud/v1
     model: mishima
-    context_length: 131072
     provider: murakumo
     key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
   compression:
     base_url: https://api.murakumo.cloud/v1
     model: mishima
+    context_length: 131072
     provider: murakumo
     reasoning_effort: none
     key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
