@@ -2,9 +2,8 @@
 model:
   provider: murakumo
   base_url: https://api.murakumo.cloud/v1
-  key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
   default: mishima
-  max_tokens: 1024
+  max_tokens: 8192
   context_length: 131072
 plugins:
   enabled: []
@@ -17,70 +16,61 @@ providers:
   murakumo:
     base_url: https://api.murakumo.cloud/v1
     api_mode: chat_completions
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
-    models:
-      mishima:
-        context_length: 131072
-        max_tokens: 1024
-      qwen3-vl-2b-instruct:
-        context_length: 4096
-        max_tokens: 512
     stale_timeout_seconds: 600
     request_timeout_seconds: 900
-    extra_headers:
-      HTTP-Referer: https://itonami.cloud
-      X-Title: Itonami By KotobaLabs
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
 auxiliary:
+  free_only: true
   vision:
     provider: murakumo
     base_url: https://api.murakumo.cloud/v1
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     model: qwen3-vl-2b-instruct
     reasoning_effort: none
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
   web_extract:
-    provider: murakumo
     base_url: https://api.murakumo.cloud/v1
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     model: mishima
+    provider: murakumo
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
   compression:
-    provider: murakumo
     base_url: https://api.murakumo.cloud/v1
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     model: mishima
+    provider: murakumo
     reasoning_effort: none
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
   skills_hub:
-    provider: murakumo
     base_url: https://api.murakumo.cloud/v1
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     model: mishima
+    provider: murakumo
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
   approval:
-    provider: murakumo
     base_url: https://api.murakumo.cloud/v1
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     model: mishima
+    provider: murakumo
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
   mcp:
-    provider: murakumo
     base_url: https://api.murakumo.cloud/v1
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     model: mishima
+    provider: murakumo
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
   title_generation:
-    provider: murakumo
     base_url: https://api.murakumo.cloud/v1
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     model: mishima
+    provider: murakumo
     reasoning_effort: none
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
   triage_specifier:
-    provider: murakumo
     base_url: https://api.murakumo.cloud/v1
-    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     model: mishima
+    provider: murakumo
+    key_env: CUSTOM_PROVIDER_MURAKUMO_KEY
     fallback_chain: []
 cron:
   bot_chat_delivery_timeout_seconds: 900
@@ -89,6 +79,6 @@ mcp_servers:
   github-forest:
     command: /opt/homebrew/bin/node
     args:
-    - ${userHome}/github/com-junkawasaki/west-manifest/scripts/forest-maintenance.mjs
+    - ~/github/com-junkawasaki/west-manifest/scripts/forest-maintenance.mjs
     - mcp
     lazy: true
